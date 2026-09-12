@@ -1,0 +1,260 @@
+
+:root {
+  --bg-dark: #0f111a;
+  --bg-card: #1a1d2e;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent: #0c9c90;     
+  --accent-hover: #87f5d2;
+  --border-color: #2e344e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+
+h1 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #0c9c90;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+   text-align: center;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: text-muted;
+  margin-bottom: 1rem;
+}
+
+header {
+  background-color: var(--bg-card);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header p {
+  color: #87f5d2;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: left;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  display: inline-block; 
+  transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  filter: drop-shadow(0 0 4px rgba(217, 255, 243, 1.0)) drop-shadow(0 0 20px rgba(217, 255, 243, 1.0));
+  transform: scale(1.08)
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+main ul, 
+main ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.project-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-0.25rem);
+  border-color: #0c9c90;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 0 4px rgba(14, 111, 140, 1.0)) drop-shadow(0 0 20px rgba(14, 111, 140, 1.0));
+
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.image-gallery img,
+.project-card > img {
+  width: auto; 
+  max-width: 100%; 
+  height: auto; 
+  max-height: 16rem; 
+  object-fit: contain; 
+  border-radius: 0.5rem;
+  flex-shrink: 0; 
+  transition: transform 0.2s ease;
+}
+
+.image-gallery {
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.04);
+}
+
+a {
+  color: #0c9c90;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0c9c90;
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid #0c9c90;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 480;
+  min-height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #0f111a;
+}
+
+.banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+  z-index: 1;       
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    aspect-ratio: auto;
+    min-height: 180px; 
+  }
+
+  .banner-img {
+    object-position: left center; 
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-content {
+    padding: 1.5rem 1rem;
+    text-align: left;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
